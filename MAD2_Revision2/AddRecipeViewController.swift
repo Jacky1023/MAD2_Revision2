@@ -27,9 +27,14 @@ class AddRecipeViewController : UIViewController{
             alert.addAction(UIAlertAction(title: "Noted", style: .default))
             self.present(alert, animated: true, completion: nil)
         }
+        else if (txtIngredient1.text == "" || txtIngredient2.text == "" || txtIngredient3.text == "" || txtIngredient4.text == "" || txtIngredient5.text == ""){
+            let alert = UIAlertController(title: "Empty Field", message: "Please populate at least one ingredient", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .default))
+            self.present(alert, animated: true, completion: nil)
+        }
 
         
     }
-    
+ 
     
 }
