@@ -14,6 +14,7 @@
 		877AE4672398FC7E008835AB /* MAD2_Revision2.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 877AE4652398FC7E008835AB /* MAD2_Revision2.xcdatamodeld */; };
 		877AE4692398FC7E008835AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 877AE4682398FC7E008835AB /* Assets.xcassets */; };
 		877AE46C2398FC7E008835AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 877AE46A2398FC7E008835AB /* LaunchScreen.storyboard */; };
+		877AE4742399014C008835AB /* RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877AE4732399014C008835AB /* RecipeTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		877AE4682398FC7E008835AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		877AE46B2398FC7E008835AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		877AE46D2398FC7E008835AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		877AE4732399014C008835AB /* RecipeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				877AE46A2398FC7E008835AB /* LaunchScreen.storyboard */,
 				877AE46D2398FC7E008835AB /* Info.plist */,
 				877AE4652398FC7E008835AB /* MAD2_Revision2.xcdatamodeld */,
+				877AE4732399014C008835AB /* RecipeTableViewController.swift */,
 			);
 			path = MAD2_Revision2;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 				877AE45D2398FC7E008835AB /* AppDelegate.swift in Sources */,
 				877AE45F2398FC7E008835AB /* SceneDelegate.swift in Sources */,
 				877AE4672398FC7E008835AB /* MAD2_Revision2.xcdatamodeld in Sources */,
+				877AE4742399014C008835AB /* RecipeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
