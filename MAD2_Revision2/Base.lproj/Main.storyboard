@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F7k-gJ-3n9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -39,9 +39,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="Xu1-Dt-UG7" kind="show" trigger="accessoryAction" id="ZPE-Fv-rY7"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -50,17 +47,22 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="wiB-BJ-Taq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8zQ-CP-7AA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8zQ-CP-7AA">
+                            <connections>
+                                <action selector="AddIngredientBtn:" destination="QrA-wv-DC9" id="ifG-iy-B4U"/>
+                                <segue destination="Xu1-Dt-UG7" kind="show" id="HRh-nI-Bjj"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pgG-5D-cdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="900.00000000000011" y="169.41964285714286"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Recipe View Controller-->
         <scene sceneID="ADL-hE-OLx">
             <objects>
-                <viewController id="Xu1-Dt-UG7" sceneMemberID="viewController">
+                <viewController id="Xu1-Dt-UG7" customClass="AddRecipeViewController" customModule="MAD2_Revision2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="idi-I4-ANC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,16 +116,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ASV-CS-Dfi">
-                                <rect key="frame" x="20" y="635" width="374" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XSD-aX-I7E">
+                                <rect key="frame" x="20" y="646" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="btnAdd:" destination="Xu1-Dt-UG7" eventType="touchUpInside" id="5IH-g8-E2B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ilS-Rg-uRb"/>
                     </view>
                     <navigationItem key="navigationItem" id="bym-cY-eUg"/>
+                    <connections>
+                        <outlet property="label" destination="0oP-It-tjm" id="mNi-HI-nkD"/>
+                        <outlet property="txtIngredient1" destination="xND-iW-unz" id="CQ1-XU-xMy"/>
+                        <outlet property="txtIngredient2" destination="8C7-1t-qpS" id="677-S7-y8p"/>
+                        <outlet property="txtIngredient3" destination="6NB-6t-W1v" id="hyC-KM-aqH"/>
+                        <outlet property="txtIngredient4" destination="e0k-PU-a5S" id="n6H-bB-U3O"/>
+                        <outlet property="txtIngredient5" destination="Bsg-oF-nmT" id="W6g-jT-V4C"/>
+                        <outlet property="txtPreparationTime" destination="4in-w5-Urd" id="Apx-pb-7nc"/>
+                        <outlet property="txtTitle" destination="FwQ-Uu-hWs" id="hBR-Ik-RPB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzb-e5-fjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
