@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreData
 import UIKit
 
 class RecipeTableViewController : UITableViewController{
@@ -19,11 +20,6 @@ class RecipeTableViewController : UITableViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.reloadData() //refresh data
-        
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
-        
-
 
     }
     

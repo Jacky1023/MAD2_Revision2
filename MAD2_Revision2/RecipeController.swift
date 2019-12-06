@@ -80,16 +80,15 @@ class RecipeController{
           var ingredientList:[Ingredient]=[]
 
           let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDIngredient")
-        fetchRequest.predicate = NSPredicate(format: "recipes = %@", newRecipe.Name)
+        fetchRequest.predicate = NSPredicate(format: "ANY recipes.name = %@", newRecipe.Name)
           do{
                let ingredient = try context.fetch(fetchRequest) as! [CDIngredient]
 
                for i in ingredient{
                 ingredientList.append( Ingredient(name: i.name!))
                }
-           } catch let error as NSError {
-           print("Could not save. \(error), \(error.userInfo)")
            }
+          catch{print(error)}
            return ingredientList
        }
     

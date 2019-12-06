@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="F7k-gJ-3n9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="t33-LM-zeq">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
@@ -8,29 +8,29 @@
     </dependencies>
     <scenes>
         <!--Recipe Table View Controller-->
-        <scene sceneID="1Ix-SO-UwC">
+        <scene sceneID="Gaw-3R-hs2">
             <objects>
-                <tableViewController id="QrA-wv-DC9" customClass="RecipeTableViewController" customModule="MAD2_Revision2" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="8gv-hv-vdm">
+                <tableViewController id="a76-yI-30U" customClass="RecipeTableViewController" customModule="MAD2_Revision2" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VEh-if-t0R">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="zeK-zC-ms1" detailTextLabel="4pZ-fV-T4u" style="IBUITableViewCellStyleSubtitle" id="9x9-WK-e70">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="01A-Ke-Ddq" detailTextLabel="enA-2E-j6f" style="IBUITableViewCellStyleSubtitle" id="zkY-hO-qA1">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9x9-WK-e70" id="Arx-YT-8Cq">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zkY-hO-qA1" id="sYS-G7-evN">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="zeK-zC-ms1">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="01A-Ke-Ddq">
                                             <rect key="frame" x="20" y="10" width="33.5" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="4pZ-fV-T4u">
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="enA-2E-j6f">
                                             <rect key="frame" x="20" y="31.5" width="44" height="14.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -42,22 +42,21 @@
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="QrA-wv-DC9" id="M1n-fx-Jxt"/>
-                            <outlet property="delegate" destination="QrA-wv-DC9" id="foj-MP-7Nd"/>
+                            <outlet property="dataSource" destination="a76-yI-30U" id="78D-mQ-K6u"/>
+                            <outlet property="delegate" destination="a76-yI-30U" id="wAk-aK-fgx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="wiB-BJ-Taq">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="8zQ-CP-7AA">
+                    <navigationItem key="navigationItem" id="NDG-dW-4B7">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="UbA-i2-cH5">
                             <connections>
-                                <action selector="AddIngredientBtn:" destination="QrA-wv-DC9" id="ifG-iy-B4U"/>
-                                <segue destination="Xu1-Dt-UG7" kind="show" id="HRh-nI-Bjj"/>
+                                <segue destination="Xu1-Dt-UG7" kind="show" id="PEP-e2-Ufs"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pgG-5D-cdI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTz-r3-jB7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="900.00000000000011" y="169.41964285714286"/>
+            <point key="canvasLocation" x="2013.0434782608697" y="168.75"/>
         </scene>
         <!--Add Recipe View Controller-->
         <scene sceneID="ADL-hE-OLx">
@@ -142,25 +141,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzb-e5-fjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889.8550724637682" y="168.75"/>
+            <point key="canvasLocation" x="2800" y="168.75"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="lV0-yz-tRk">
+        <scene sceneID="00u-vo-4tu">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F7k-gJ-3n9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t33-LM-zeq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="aes-NH-aUi">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="DDI-ci-FBA">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="QrA-wv-DC9" kind="relationship" relationship="rootViewController" id="HGB-18-TlA"/>
+                        <segue destination="a76-yI-30U" kind="relationship" relationship="rootViewController" id="K9a-cg-Pjx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9rS-ks-NcI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sS7-tI-qT6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-10.144927536231885" y="169.41964285714286"/>
+            <point key="canvasLocation" x="1102.8985507246377" y="168.75"/>
         </scene>
     </scenes>
     <resources>

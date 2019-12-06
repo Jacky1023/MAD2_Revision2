@@ -21,35 +21,42 @@ class AddRecipeViewController : UIViewController{
     @IBOutlet weak var txtIngredient5: UITextField!
     
     @IBAction func btnAdd(_ sender: Any) {
-        let time = Int16(txtPreparationTime.text!)
-        let recipeController:RecipeController = RecipeController()
-        recipeController.addRecipe(newRecipe: Recipe(name: txtTitle.text ?? "", preparationtime: time!))
-        recipeController.addIngredient(newIngredient: Ingredient(name: txtIngredient1.text ?? ""), newRecipe: Recipe(name: txtTitle.text ?? "", preparationtime: time!))
-        
-        
-        
-        
-        
-        
-        
+                
         if(txtTitle.text == "" && txtPreparationTime.text == "" ){
             
-            let alert = UIAlertController(title: "Empty Field", message: "Please populate the title and preparation time", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "Noted", style: .default))
-            self.present(alert, animated: true, completion: nil)
+            AlertFailedToAddTitleAndTime()
         }
-        else if (txtIngredient1.text == "" || txtIngredient2.text == "" || txtIngredient3.text == "" || txtIngredient4.text == "" || txtIngredient5.text == ""){
-            let alert = UIAlertController(title: "Empty Field", message: "Please populate at least one ingredient", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok", style: .default))
-            self.present(alert, animated: true, completion: nil)
+        if (txtIngredient1.text == "" && txtIngredient2.text == "" && txtIngredient3.text == "" && txtIngredient4.text == "" && txtIngredient5.text == ""){
+            AlertFailedToAddIngredients()
         }
         else{
-            let alert = UIAlertController(title: "Successfull", message: "adding ingredient successfully", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "ok", style: .default))
-            self.present(alert, animated: true, completion: nil)
+            let time = Int16(txtPreparationTime.text!)
+            let recipeController:RecipeController = RecipeController()
+            recipeController.addRecipe(newRecipe: Recipe(name: txtTitle.text ?? "", preparationtime: time!))
+            recipeController.addIngredient(newIngredient: Ingredient(name: txtIngredient1.text ?? ""), newRecipe: Recipe(name: txtTitle.text ?? "", preparationtime: time!))
+            AlertSuccess()
+            
         }
 
         
+    }
+    
+    func AlertSuccess(){
+        let alert = UIAlertController(title: "Successfull", message: "new ingredient and item was added successfully", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func AlertFailedToAddTitleAndTime(){
+        let alert = UIAlertController(title: "Empty Field", message: "Please populate the title and preparation time", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Noted", style: .default))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func AlertFailedToAddIngredients(){
+        let alert = UIAlertController(title: "Empty Field", message: "Please populate at least one ingredient", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default))
+        self.present(alert, animated: true, completion: nil)
     }
  
     
