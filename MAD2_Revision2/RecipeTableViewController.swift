@@ -55,5 +55,10 @@ class RecipeTableViewController : UITableViewController{
         
         return cell
     }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        appDelegate.rowValue = indexPath.row
+
+
+        }
 
 }

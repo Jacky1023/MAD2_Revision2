@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Recipe Table View Controller-->
+        <!--RecipeList-->
         <scene sceneID="Gaw-3R-hs2">
             <objects>
                 <tableViewController id="a76-yI-30U" customClass="RecipeTableViewController" customModule="MAD2_Revision2" customModuleProvider="target" sceneMemberID="viewController">
@@ -16,11 +16,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="01A-Ke-Ddq" detailTextLabel="enA-2E-j6f" style="IBUITableViewCellStyleSubtitle" id="zkY-hO-qA1">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="disclosureIndicator" textLabel="01A-Ke-Ddq" detailTextLabel="enA-2E-j6f" style="IBUITableViewCellStyleSubtitle" id="zkY-hO-qA1">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zkY-hO-qA1" id="sYS-G7-evN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="55.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="382.5" height="55.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="01A-Ke-Ddq">
@@ -46,7 +46,7 @@
                             <outlet property="delegate" destination="a76-yI-30U" id="wAk-aK-fgx"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="NDG-dW-4B7">
+                    <navigationItem key="navigationItem" title="RecipeList" id="NDG-dW-4B7">
                         <barButtonItem key="rightBarButtonItem" title="Item" image="plus" catalog="system" id="UbA-i2-cH5">
                             <connections>
                                 <segue destination="Xu1-Dt-UG7" kind="show" id="PEP-e2-Ufs"/>
@@ -123,6 +123,14 @@
                                     <action selector="btnAdd:" destination="Xu1-Dt-UG7" eventType="touchUpInside" id="5IH-g8-E2B"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-h5-u6N">
+                                <rect key="frame" x="190" y="708" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="btnSave:" destination="Xu1-Dt-UG7" eventType="touchUpInside" id="uoo-aU-Tzu"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ilS-Rg-uRb"/>
@@ -141,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vzb-e5-fjJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2800" y="168.75"/>
+            <point key="canvasLocation" x="2798.5507246376815" y="168.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="00u-vo-4tu">

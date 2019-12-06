@@ -19,7 +19,10 @@ class AddRecipeViewController : UIViewController{
     @IBOutlet weak var txtIngredient3: UITextField!
     @IBOutlet weak var txtIngredient4: UITextField!
     @IBOutlet weak var txtIngredient5: UITextField!
-    
+    var recipeList:[Recipe] = []
+    var appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var recipeController:RecipeController = RecipeController()
+
     @IBAction func btnAdd(_ sender: Any) {
                 
         if(txtTitle.text == "" && txtPreparationTime.text == "" ){
@@ -37,6 +40,7 @@ class AddRecipeViewController : UIViewController{
             AlertSuccess()
             
         }
+        
 
         
     }
@@ -59,5 +63,15 @@ class AddRecipeViewController : UIViewController{
         self.present(alert, animated: true, completion: nil)
     }
  
-    
+//    @IBAction func btnSave(_ sender: Any) {
+//        if(txtTitle.text != "" && txtPreparationTime.text != "" && txtIngredient1.text != ""){
+//            let time = Int16(txtPreparationTime.text!)
+//            let rowValue = appDelegate.rowValue
+//            let recipe = recipeList[rowValue!]
+//            let recipeController:RecipeController = RecipeController()
+//            recipeController.updateRecipe(name: recipe.Name, newRecipe: Recipe(name: txtTitle.text!, preparationtime: time!))
+//            
+//        }
+//    }
+//    
 }

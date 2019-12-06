@@ -16,7 +16,7 @@ class RecipeController{
     func addRecipe(newRecipe:Recipe){
         let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-               
+         // get recipe entity table
         let Recipeentity = NSEntityDescription.entity(forEntityName:"CDRecipe", in: context)!
                
         let recipe = NSManagedObject(entity: Recipeentity, insertInto: context)
@@ -71,16 +71,16 @@ class RecipeController{
 
     }
     
-    //Retrieve all ingredients from core data
+    //Retrieve all ingredients from core data   (pass the recipe parameter in to retrieve ingredients)
     func retrieveAllIngredient(newRecipe:Recipe)->[Ingredient]
        {
   
           let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
           let context = appDelegate.persistentContainer.viewContext
-          var ingredientList:[Ingredient]=[]
+          var ingredientList:[Ingredient]=[]    //empty list to store all ingredients
 
           let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "CDIngredient")
-        fetchRequest.predicate = NSPredicate(format: "ANY recipes.name = %@", newRecipe.Name)
+          fetchRequest.predicate = NSPredicate(format: "ANY recipes.name = %@", newRecipe.Name)
           do{
                let ingredient = try context.fetch(fetchRequest) as! [CDIngredient]
 
@@ -92,5 +92,21 @@ class RecipeController{
            return ingredientList
        }
     
+//    func updateRecipe(name:String, newRecipe:Recipe){
+//        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDRecipe")
+//        fetchRequest.predicate = NSPredicate(format:"name = %@",newRecipe.Name)
+//        
+//        let Recipeentity = NSEntityDescription.entity(forEntityName:"CDRecipe", in: context)!
+//               
+//        let recipe = NSManagedObject(entity: Recipeentity, insertInto: context)
+//        recipe.setValue(newRecipe.Name,forKeyPath: "name")
+//        recipe.setValue(newRecipe.PreparationTime,forKeyPath: "preparationTime")
+//        
+//        appDelegate.saveContext()
+//        
+//    }
     
 }
