@@ -48,7 +48,7 @@ class RecipeTableViewController : UITableViewController{
         ingredientList  = recipeController.retrieveAllIngredient(newRecipe: recipeList[indexPath.row])
         var s = ""
         for ing in ingredientList{
-            s+="\(ing.Name)"
+            s+="\(ing.Name), "
         }
         cell.detailTextLabel!.text = s
 

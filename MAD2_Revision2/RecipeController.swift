@@ -92,19 +92,54 @@ class RecipeController{
            return ingredientList
        }
     
-//    func updateRecipe(name:String, newRecipe:Recipe){
+    func updateRecipe(name:String , newRecipe:Recipe, newIngredient:Ingredient){
+        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDRecipe")
+        fetchRequest.predicate = NSPredicate(format:"name = %@",name)
+
+        do {
+            let result = try! context.fetch(fetchRequest)
+            let obj = result[0] as! NSManagedObject
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDIngredient")
+            fetchRequest.predicate = NSPredicate(format:"name = %@",name)
+            obj.setValue(newRecipe.Name, forKeyPath:  "name")
+            obj.setValue(newRecipe.PreparationTime, forKeyPath: "preparationTime")
+            obj.setValue(newIngredient.Name, forKey: "name")
+            
+
+            do{
+                try context.save()
+            } catch let error as NSError{
+                print("Could not update: \(error), \(error.userInfo)")
+            }
+        }
+
+        appDelegate.saveContext()
+        
+    }
+    
+//    func updateIngredient(Ingredientname:String , newIngredient:Ingredient){
 //        let appDelegate = (UIApplication.shared.delegate) as! AppDelegate
 //        let context = appDelegate.persistentContainer.viewContext
-//        
-//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDRecipe")
-//        fetchRequest.predicate = NSPredicate(format:"name = %@",newRecipe.Name)
-//        
-//        let Recipeentity = NSEntityDescription.entity(forEntityName:"CDRecipe", in: context)!
-//               
-//        let recipe = NSManagedObject(entity: Recipeentity, insertInto: context)
-//        recipe.setValue(newRecipe.Name,forKeyPath: "name")
-//        recipe.setValue(newRecipe.PreparationTime,forKeyPath: "preparationTime")
-//        
+//
+//        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "CDIngredient")
+//        fetchRequest.predicate = NSPredicate(format:"name = %@",Ingredientname)
+//
+//        do {
+//            let result = try! context.fetch(fetchRequest)
+//            let obj = result[0] as! NSManagedObject
+//            
+//            obj.setValue(newIngredient.Name, forKeyPath:  "name")
+//            
+//            do{
+//                try context.save()
+//            } catch let error as NSError{
+//                print("Could not update: \(error), \(error.userInfo)")
+//            }
+//        }
+//
 //        appDelegate.saveContext()
 //        
 //    }

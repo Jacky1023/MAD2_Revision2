@@ -39,6 +39,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Xu1-Dt-UG7" kind="show" id="ueC-to-Zbh"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -124,9 +127,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzN-h5-u6N">
-                                <rect key="frame" x="190" y="708" width="34" height="30"/>
+                                <rect key="frame" x="182" y="708" width="51" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="Update"/>
                                 <connections>
                                     <action selector="btnSave:" destination="Xu1-Dt-UG7" eventType="touchUpInside" id="uoo-aU-Tzu"/>
                                 </connections>
@@ -173,4 +176,7 @@
     <resources>
         <image name="plus" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="PEP-e2-Ufs"/>
+    </inferredMetricsTieBreakers>
 </document>
